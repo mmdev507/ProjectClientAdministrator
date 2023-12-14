@@ -184,6 +184,8 @@ nav ul li a:hover {
   
 }
 
+
+
 #ModificarCliente{
   background-color: #0A1A44;
   color: white;
@@ -285,4 +287,138 @@ footer {
   border-radius: 3px;
   cursor: pointer;
   text-decoration: none;
+}
+
+/* Estilos para el formulario */
+.formulario {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los campos */
+.campo {
+  margin-bottom: 10px;
+  background: #ddd;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 3px;
+  border: 1px solid #0056b3;
+}
+
+/* Estilos para el botón */
+.boton input[type="submit"] {
+  padding: 10px 15px;
+  background: #0A1A44;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.boton input[type="submit"]:hover {
+  background: #0056b3;
+} 
+
+footer {
+  background-color: #0A1A44;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Estilos para el contenedor del kanban */
+.kanban-board {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.kanban-column {
+  flex: 1;
+  margin: 0 10px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para las tarjetas */
+.kanban-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.card-title1 {
+  background-color: #D3D3D3;
+  color: #0A1A44;
+  padding: 5px;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-button {
+  padding: 5px 10px;
+  background-color: #0A1A44;
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.card-button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para la tabla */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Estilos adicionales para resaltar algunas celdas */
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
 }

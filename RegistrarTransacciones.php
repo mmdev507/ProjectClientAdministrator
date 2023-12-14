@@ -25,8 +25,25 @@ session_start();
     </header>
     <<center>
     <img src="img/Registrartransacciones.png" alt="Imagen de eliminar"  width="500" height="500" posit>
-    <h1>Sitio en construcción, lamentamos el inconveniente, vuelva intentalo !Pronto!</h1>
+    <h1>Sitio en Mantenimiento ¡Vuelva pronto!</h1>
 </center>
+<script>
+   if (document.cookie.split(';').some((item) => item.trim().startsWith('user='))) {
+    console.log('La cookie "user" está configurada.');
+} else {
+    console.log('La cookie "user" no está configurada.');
+}
+</script>
+    <script>
+document.getElementById('CerrarSesion').addEventListener('click', function() {
+  
+  // Eliminar la cookie 'user'
+    document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    
+    // Redirigir a la página de inicio de sesión
+  window.location.href = 'login.php';
+});
+</script>
 </body>
 <footer>
     <p>© 2023 Services MM. Todos los derechos reservados.</p>

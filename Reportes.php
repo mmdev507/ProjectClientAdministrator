@@ -21,13 +21,13 @@ session_start ();
         </ul>
     </nav>
     <Center>       
-<H1>Reporte de Tareas</H1>
+<H1>Reporte de Clientes</H1>
         </Center> 
 
         <FORM NAME="FormFiltro" METHOD="post" ACTION="Reportes.php">
 <BR/>
 Filtrar por:
-<INPUT NAME="ConsultarTodos"   VALUE="Clientes" TYPE="submit"/> 
+<INPUT NAME="ConsultarTodos"   VALUE="Clientes" TYPE="submit" CLASS="card-button"/> 
 <?php
 
 require_once("class/clientes.php");
@@ -40,55 +40,6 @@ if(array_key_exists('ConsultarTodos', $_POST)) {
     $obj_clientes = new cliente();
     $clientes= $obj_clientes->listado_clientes();
 }
-
-/*
-if(array_key_exists('ConsultarFiltro', $_POST)) {
-                                                                                    
-    $obj_tareas = new tarea();
-    $tareas = $obj_tareas->consultar_tareas_hoy();
-}
-
-if(array_key_exists('ConsultarEstado', $_POST)) {
-  
-  $estado = $_POST['estado'];
-  
-  $obj_tareas = new tarea();
-  $tareas = $obj_tareas->consultar_tareas_estado($estado);
-
-  if ($tareas !== null) {
-    $nfilas = count($tareas);
-} else {
-  echo "No hay registros para este estado";
-}
-}
-
-if(array_key_exists('Consultartipo', $_POST)) {
-  
-  $tipo = $_POST['tipo'];
-  
-  $obj_tareas = new tarea();
-  $tareas = $obj_tareas->consultar_tareas_tipo($tipo);
-
-  if ($tareas !== null) {
-    $nfilas = count($tareas);
-} else {
-  echo "No hay registros para este tipo ";
-}
-}
-
-if (array_key_exists('fechas', $_POST)) {
-  $desde = $_POST['desde'];
-  $hasta = $_POST['hasta'];
-
-  $obj_tareas = new tarea();
-  $tareas = $obj_tareas->consultar_tareas_fechas($desde, $hasta);
-
-  if ($tareas !== null) {
-      $nfilas = count($tareas);
-  } else {
-    echo " No hay tareas para este rango";
-  }
-}  */
 
 if (!empty($clientes)) {
   $nfilas = count($clientes);
@@ -138,7 +89,23 @@ else {
 
 
 ?>
+<script>
+   if (document.cookie.split(';').some((item) => item.trim().startsWith('user='))) {
+    console.log('La cookie "user" está configurada.');
+} else {
+    console.log('La cookie "user" no está configurada.');
+}
+</script>
+    <script>
+document.getElementById('CerrarSesion').addEventListener('click', function() {
+  
+  // Eliminar la cookie 'user'
+    document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     
+    // Redirigir a la página de inicio de sesión
+  window.location.href = 'login.php';
+});
+</script>  
 </body>
 <footer>
     <p>© 2023 Services MM. Todos los derechos reservados.</p>
